@@ -7,7 +7,7 @@ title: Voodeng's
 subtitle: 无以为用
 author: Voodeng
 simple_search: http://google.com/search
-description:
+description: 简单至上，简洁至高
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -19,7 +19,7 @@ date_format: "ordinal"
 subscribe_rss: /atom.xml
 subscribe_email:
 # RSS feeds can list your email address if you like
-email:
+email: voodeng@gmail.com
 
 # ----------------------- #
 #    Jekyll & Plugins     #
@@ -64,7 +64,7 @@ github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user:
+twitter_user: voodeng
 twitter_tweet_count: 4
 twitter_show_replies: false
 twitter_follow_button: true
