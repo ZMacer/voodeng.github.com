@@ -1,0 +1,14 @@
+---
+layout: default
+title: 抱歉，你要访问的网页不存在
+footer: false
+---
+<br />
+<h2> 404 NO PAGE FOUND  <br/>看看下面有木有你要找的东东？</h2>
+<br />
+
+{% for post in site.posts limit: 10 %}
+
+  {% include archive_post.html %}
+
+{% endfor %}
