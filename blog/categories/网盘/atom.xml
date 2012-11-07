@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 网盘 | Voodeng's]]></title>
+  <link href="http://voodeng.com/blog/categories/网盘/atom.xml" rel="self"/>
+  <link href="http://voodeng.com/"/>
+  <updated>2012-11-07T17:22:18+08:00</updated>
+  <id>http://voodeng.com/</id>
+  <author>
+    <name><![CDATA[Voodeng]]></name>
+    <email><![CDATA[voodeng@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[百度的100g网盘]]></title>
+    <link href="http://voodeng.com/blog/2012/09/03/bai-du-100g-wang-pan/"/>
+    <updated>2012-09-03T11:58:00+08:00</updated>
+    <id>http://voodeng.com/blog/2012/09/03/bai-du-100g-wang-pan</id>
+    <content type="html"><![CDATA[<p>终于，国内互联网的大哥们已经进入了这个网盘地带<br/>
+终于，和当年的gmail时代一样，gamil的降临带领邮件从100mb空间一下直接奔上了G时代，没个几G的邮箱空间，都不好意思和别人打招呼。<br/>
+现阶段，从国外的dropbox，skydriver，google drive等，到国内的115，快盘，everbox，坚果云等，还有现在的 百度云，各种选择。</p>
+
+<p>今天百度云上线并且有100g的空间，不过，仔细看一下图片<br/>
+<img src="http://thumbsnap.com/s/ziwnGp82.jpg" alt="百度100g网盘" /><br/>
+一年的使用权，也就是说，这多出的100g也只是给你玩一年的，那么，如果一年后空间存满了咋办？啊这样啊~该死</p>
+]]></content>
+  </entry>
+  
+</feed>
