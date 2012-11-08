@@ -1,17 +1,15 @@
 jQuery(document).ready(function($) {
+    $(".caselist li,#homeweibo .content h2").after("<img src='img/svwloader.gif' class='ldrgif' alt='loading...' />");
 
     //Cache some variables
     // var links = $('.navigation').find('li');
     var mywindow = $(window);
+    var htmlbody = $('html,body');
 
     //initialise Stellar.js 视觉落差
     mywindow.stellar({
-        horizontalScrolling: false,
-        verticalScrolling: true,
-        horizontalOffset: 1,
-        verticalOffset: 0
+        horizontalScrolling: false
     });
-
 
     //initialise spectragram.js  获取Instagram照片
     jQuery.fn.spectragram.accessData = {
@@ -25,5 +23,9 @@ jQuery(document).ready(function($) {
         size: 'small'
     });
 
+    $("#footer a").click(function(){
+     htmlbody.animate({ scrollTop: $($(this).attr("href")).offset().top }, 'slow','swing');
+     return false;
+     });
 
 });

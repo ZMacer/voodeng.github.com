@@ -50,7 +50,47 @@ WeiboUtility.mid2url = function(mid) {
     return url;
 };
 
-jQuery(document).ready(function($) {
+        var relativeDate = function(date){
+            if (navigator.appName === 'Microsoft Internet Explorer') return '';
+
+            var unit = {
+                now: 'Now',
+                minute: '1 min',
+                minutes: ' mins',
+                hour: '1 hr',
+                hours: ' hrs',
+                day: 'Yesterday',
+                days: ' days',
+                week: '1 week',
+                weeks: ' weeks'
+            };
+
+            var current = new Date(),
+                tweet = new Date(date),
+                diff = (((current.getTime() + (1 * 60000)) - tweet.getTime()) / 1000),
+                day_diff = Math.floor(diff / 86400);
+            
+            if (day_diff == 0){
+                if (diff < 60) return unit.now;
+                else if (diff < 120) return unit.minute;
+                else if (diff < 3600) return Math.floor(diff / 60) + unit.minutes;
+                else if (diff < 7200) return unit.hour;
+                else if (diff < 86400) return Math.floor(diff / 3600) + unit.hours;
+                else return '';
+            } else if (day_diff == 1) {
+                return unit.day;
+            } else if (day_diff < 7) {
+                return day_diff + unit.days;
+            } else if (day_diff == 7) {
+                return unit.week;
+            } else if (day_diff > 7) {
+                return Math.ceil(day_diff / 7) + unit.weeks;
+            } else {
+                return '';
+            }
+        }
+
+
     var linkify = function(text) {
             // text = text.replace(/(https?:\/\/)([\w\-:;?&=+.%#\/]+)/gi, '<a href="$1$2">$2</a>').replace(/(^|\W)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>').replace(/(^|\W)#(\w+)/g, '$1<a href="http://search.twitter.com/search?q=%23$2">#$2</a>');
             text = text.replace(/(https?:\/\/)([\w\-:;?&=+.%#\/]+)/gi, '<a href="$1$2">$2</a>').replace(/(^|\W)@(\w+)/g, '$1<a href="http://weibo.com/n/$2">@$2</a>').replace(/#(\w+)#/g, '$1<a href="http://search.weibo.com/search?q=%23$2">#$2#</a>');
@@ -69,6 +109,7 @@ jQuery(document).ready(function($) {
         },
         success: function(data, textStatus, xhr) {
             //读取成功后执行函数
+            $(".ldrgif").remove();
             var weibo = data.data.statuses;
             var length = weibo.length;
             var weizhi = $('#homeweibo .content');
@@ -76,7 +117,7 @@ jQuery(document).ready(function($) {
             for(var i = 0; i < length; i++) {
 
                 var item = $("<dl></dl>");
-                var date = $.format.date(weibo[i].created_at, "MM-dd hh:mm");
+                var date = relativeDate(weibo[i].created_at);
                 var wimg = weibo[i].thumbnail_pic ? "<img src=" + weibo[i].thumbnail_pic + " />" : "";
                 var wfwimg = weibo[i].retweeted_status ? (weibo[i].retweeted_status.thumbnail_pic ? "<img src=" + weibo[i].retweeted_status.thumbnail_pic + " />" : "") : "";
                 var face = "<dt class=\"touxiang\"><img src=\"" + weibo[i].user.profile_image_url + " alt=\"" + weibo[i].user.name + "\" /></dt>";
@@ -91,5 +132,5 @@ jQuery(document).ready(function($) {
         }
     });
 
-});
+
 

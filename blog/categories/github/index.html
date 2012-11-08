@@ -20,30 +20,30 @@
 	
 </head>
 
-<body>
+<body id="wrapper">
   <header id="header" class="inner">
 
 <div class="wrapper">
 
-	<nav id="topnav">
-                            <ul class="navigation">
-                                <li>
-                                    <a href="/" data-slide="1">home</a>
-                                </li>
-                                <li>
-                                    <a href="/blog">blog</a>
-                                </li>
-                                <li>
-                                    <a data-slide="3">weibo</a>
-                                </li>
-                                <li>
-                                    <a data-slide="4">case</a>
-                                </li>
-                                <li>
-                                    <a data-slide="5">article</a>
-                                </li>
-                            </ul>
-                        </nav>
+	<nav id="main-nav">
+    <ul class="navigation">
+        <li>
+            <a href="/" data-slide="1">home</a>
+        </li>
+        <li>
+            <a href="/blog/archives/">blog</a>
+        </li>
+        <li>
+            <a data-slide="3">weibo</a>
+        </li>
+        <li>
+            <a data-slide="4">case</a>
+        </li>
+        <li>
+            <a data-slide="5">article</a>
+        </li>
+    </ul>
+</nav>
 	<img id="r1" src="/images/fl/fl_09.png" alt="" data-stellar-ratio="1.5" />
 	<img id="r2" src="/images/fl/fl_03.png" alt="" data-stellar-ratio="1.7" />
 	<img id="r3" src="/images/fl/fl_06.png" alt="" data-stellar-ratio="2" />
@@ -57,6 +57,7 @@
 		<p>so,放弃白日梦吧，好好干一场！</p> <strong>Ever man is a poet when he is in love.</strong>
 	</section>
 </div>
+
 </header>
 	
 	
@@ -68,6 +69,7 @@
 
 	
 	
+	<div id="main">
 	<section class="archives"><h1 class="year">2012</h1>
 
 <article>
@@ -84,34 +86,30 @@
 	    
 	</div>
 </article>
+<hr>
 
 </div>
+  
 	<footer id="footer" class="inner"><div class="slideInner">
-  <div class="wrapper">
-    <img src="/images/fl/fl_71.png" alt="" id="r51" data-stellar-ratio="1" >
-    <img src="/images/fl/fl_74.png" alt="" id="r52" data-stellar-ratio="1" data-stellar-horizontal-offset="-240"></div>
-  <section class="content">
-    Copyright &copy; 2012
-
-    Voodeng
-</section>
+  <section class="content" itemscope itemtype="http://data-vocabulary.org/Person">
+    <a href="#wrapper" style="text-align:left;margin-right: 30px;">[Top]</a>
+    <a href="http://voodeng.com" itemprop="url">Voodeng.com</a>
+    2012
+                                Design by
+    <span itemprop="name">
+      <a href="http://weibo.com/n/voodeng" rel=author>@Voodeng</a>
+    </span>
+  </section>
 </div>
-
-</footer>
-	<script src="/javascripts/slash.js"></script>
-<script src="https://raw.github.com/gist/4001467/8348ec190201b6851a9fc24e3e21ff243517b632/jqeas.js"></script>
-<script src="https://raw.github.com/phstc/jquery-dateFormat/master/jquery.dateFormat-1.0.js"></script>
+<div class="wrapper">
+  <img src="/images/fl/fl_71.png"  id="r51" data-stellar-ratio="0.6" >
+  <img src="/images/fl/fl_74.png"  id="r52" data-stellar-ratio="0.9" >
+</div></footer>
+	<script src="https://raw.github.com/gist/4001467/8348ec190201b6851a9fc24e3e21ff243517b632/jqeas.js"></script>
 <script src="https://raw.github.com/markdalgleish/stellar.js/master/jquery.stellar.min.js"></script>
 <script src="/javascripts/js.js"></script>
 <script src="/javascripts/weibo.js"></script>
 <script src="http://lab.adrianquevedo.com/jquery-spectragram/spectragram.min.js"></script>
-<script src="/javascripts/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-(function($){
-	$('.fancybox').fancybox();
-})(jQuery);
-</script>
-<!-- Delete or comment this line to disable Fancybox -->
 
 
 </body>
