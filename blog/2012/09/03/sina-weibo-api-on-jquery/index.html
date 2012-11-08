@@ -14,10 +14,10 @@ json数据分析 自行获取的json 使用jquery获取数据 注意 常用的�
 
 	<link href="/atom.xml" rel="alternate" title="Voodeng's" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link rel="author" href="https://plus.google.com/109667821512900434570/posts" />
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	
 </head>
 
@@ -58,9 +58,9 @@ json数据分析 自行获取的json 使用jquery获取数据 注意 常用的�
 	
   
 	<div id="outerContainer"><div id="main">
-	<article class="post">
+	<article class="post hentry">
   <p class="articleline">正文:</p>
-	<h1 class="title">Sina的api真是要命了 | Jquery读取新浪微博api</h1>
+	<h1 class="entry-title">Sina的api真是要命了 | Jquery读取新浪微博api</h1>
 	<div class="entry-content"><blockquote><ol>
 <li><a href="#sina">吐槽先</a></li>
 <li><a href="#json">json数据分析</a>
@@ -322,7 +322,7 @@ weibo[i].retweeted_status.user.id = 转发的微博源作者id
 
 
 <div class="meta">
-  <div class="author">
+  <div>
   
 
 <span class="byline author vcard">Posted by <span class="fn">Voodeng</span></span>
@@ -343,7 +343,7 @@ weibo[i].retweeted_status.user.id = 转发的微博源作者id
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/api/'>api</a>, <a class='category' href='/blog/categories/js/'>js</a>, <a class='category' href='/blog/categories/json/'>json</a>, <a class='category' href='/blog/categories/weibo/'>weibo</a>, <a class='category' href='/blog/categories/开发/'>开发</a>
+	<a class='category' rel='tag' href='/blog/categories/api/'>api</a>, <a class='category' rel='tag' href='/blog/categories/js/'>js</a>, <a class='category' rel='tag' href='/blog/categories/json/'>json</a>, <a class='category' rel='tag' href='/blog/categories/weibo/'>weibo</a>, <a class='category' rel='tag' href='/blog/categories/开发/'>开发</a>
 
 
 </div>
@@ -353,7 +353,7 @@ weibo[i].retweeted_status.user.id = 转发的微博源作者id
 
 <section id="comment">
       <!-- Duoshuo Comment BEGIN -->
-	<div class="ds-thread" data-thread-key=""	data-title="sina的api真是要命了 | jquery读取新浪微博api" data-author-key="" data-url="http://voodeng.com/blog/2012/09/03/sina-weibo-api-on-jquery/"></div>
+	<div class="ds-thread" data-thread-key=""	data-title="sina的api真是要命了 | jquery读取新浪微博api" data-author-key="" data-url="http://voodeng.com/blog/2012/09/03/sina-weibo-api-on-jquery/" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"></div>
 	<script type="text/javascript">
 	var duoshuoQuery = {short_name:"voodeng"};
 	(function() {
@@ -365,6 +365,7 @@ weibo[i].retweeted_status.user.id = 转发的微博源作者id
 		|| document.getElementsByTagName('body')[0]).appendChild(ds);
 	})();
 	</script>
+
 <!-- Duoshuo Comment END -->
 </section>
 
@@ -381,7 +382,7 @@ weibo[i].retweeted_status.user.id = 转发的微博源作者id
   <section class="content" itemscope itemtype="http://data-vocabulary.org/Person">
     <a href="#wrapper" style="text-align:left;margin-right: 30px;">[Top]</a>
     <a href="http://voodeng.com" itemprop="url">Voodeng's</a>
-    <time itemprop="startDate" datetime="2012-11-09 04:01:40 +0800">2012 </time>
+    <time itemprop="startDate" datetime="2012-11-09 06:48:27 +0800">2012 </time>
                                 | Design by
     <span itemprop="name nickname">
       <a href="http://weibo.com/n/voodeng" rel=author>@Voodeng</a>
@@ -401,7 +402,10 @@ weibo[i].retweeted_status.user.id = 转发的微博源作者id
 <script src="/javascripts/js.js"></script>
 <script src="/javascripts/weibo.js"></script>
 <script src="http://lab.adrianquevedo.com/jquery-spectragram/spectragram.min.js"></script>
-
+  <script type="text/javascript">
+  $(".ds-comments-tab-duoshuo.ds-current").attr("itemprop","reviewCount");
+  $(".ds-like-panel").attr("itemprop","rating");
+  </script>
 
 </body>
 </html>

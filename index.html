@@ -13,10 +13,10 @@
 
 	<link href="/atom.xml" rel="alternate" title="Voodeng's" type="application/atom+xml">
 	<link rel="canonical" href="">
-	<link href="/favicon.png" rel="shortcut icon">
+	<link rel="author" href="https://plus.google.com/109667821512900434570/posts" />
+	<link href="/favicon.ico" rel="shortcut icon">
 	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
 	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	
 </head>
 
@@ -103,11 +103,11 @@
         
           
 
-	<li class="title">	<img src="images/point_bg.gif" alt="#" width="110px" height="110px"/><a href="/blog/2012/09/03/bai-du-100g-wang-pan/">百度的100g网盘</a></li>
+	<li class="title entry-title">	<img src="images/point_bg.gif" alt="#" width="110px" height="110px"/><a href="/blog/2012/09/03/bai-du-100g-wang-pan/">百度的100g网盘</a></li>
 
 
 <div class="meta">
-  <div class="author">
+  <div>
   
 
 <span class="byline author vcard">Posted by <span class="fn">Voodeng</span></span>
@@ -128,7 +128,7 @@
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/网盘/'>网盘</a>, <a class='category' href='/blog/categories/网络/'>网络</a>
+	<a class='category' rel='tag' href='/blog/categories/网盘/'>网盘</a>, <a class='category' rel='tag' href='/blog/categories/网络/'>网络</a>
 
 
 </div>
@@ -138,11 +138,11 @@
         
           
 
-	<li class="title">	<img src="images/point_bg.gif" alt="#" width="110px" height="110px"/><a href="/blog/2012/09/03/sina-weibo-api-on-jquery/">Sina的api真是要命了 | Jquery读取新浪微博api</a></li>
+	<li class="title entry-title">	<img src="images/point_bg.gif" alt="#" width="110px" height="110px"/><a href="/blog/2012/09/03/sina-weibo-api-on-jquery/">Sina的api真是要命了 | Jquery读取新浪微博api</a></li>
 
 
 <div class="meta">
-  <div class="author">
+  <div>
   
 
 <span class="byline author vcard">Posted by <span class="fn">Voodeng</span></span>
@@ -163,7 +163,7 @@
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/api/'>api</a>, <a class='category' href='/blog/categories/js/'>js</a>, <a class='category' href='/blog/categories/json/'>json</a>, <a class='category' href='/blog/categories/weibo/'>weibo</a>, <a class='category' href='/blog/categories/开发/'>开发</a>
+	<a class='category' rel='tag' href='/blog/categories/api/'>api</a>, <a class='category' rel='tag' href='/blog/categories/js/'>js</a>, <a class='category' rel='tag' href='/blog/categories/json/'>json</a>, <a class='category' rel='tag' href='/blog/categories/weibo/'>weibo</a>, <a class='category' rel='tag' href='/blog/categories/开发/'>开发</a>
 
 
 </div>
@@ -173,11 +173,11 @@
         
           
 
-	<li class="title">	<img src="images/point_bg.gif" alt="#" width="110px" height="110px"/><a href="/blog/2012/09/02/octopress-on-github/">Github Page 上使用 Octopress</a></li>
+	<li class="title entry-title">	<img src="images/point_bg.gif" alt="#" width="110px" height="110px"/><a href="/blog/2012/09/02/octopress-on-github/">Github Page 上使用 Octopress</a></li>
 
 
 <div class="meta">
-  <div class="author">
+  <div>
   
 
 <span class="byline author vcard">Posted by <span class="fn">Voodeng</span></span>
@@ -198,7 +198,7 @@
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/github/'>github</a>, <a class='category' href='/blog/categories/test/'>test</a>
+	<a class='category' rel='tag' href='/blog/categories/github/'>github</a>, <a class='category' rel='tag' href='/blog/categories/test/'>test</a>
 
 
 </div>
@@ -226,7 +226,7 @@
   <section class="content" itemscope itemtype="http://data-vocabulary.org/Person">
     <a href="#wrapper" style="text-align:left;margin-right: 30px;">[Top]</a>
     <a href="http://voodeng.com" itemprop="url">Voodeng's</a>
-    <time itemprop="startDate" datetime="2012-11-09 04:01:40 +0800">2012 </time>
+    <time itemprop="startDate" datetime="2012-11-09 06:48:27 +0800">2012 </time>
                                 | Design by
     <span itemprop="name nickname">
       <a href="http://weibo.com/n/voodeng" rel=author>@Voodeng</a>
@@ -246,7 +246,10 @@
 <script src="/javascripts/js.js"></script>
 <script src="/javascripts/weibo.js"></script>
 <script src="http://lab.adrianquevedo.com/jquery-spectragram/spectragram.min.js"></script>
-
+  <script type="text/javascript">
+  $(".ds-comments-tab-duoshuo.ds-current").attr("itemprop","reviewCount");
+  $(".ds-like-panel").attr("itemprop","rating");
+  </script>
 
 </body>
 </html>
