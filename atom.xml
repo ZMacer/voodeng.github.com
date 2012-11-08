@@ -4,7 +4,7 @@
   <title><![CDATA[Voodeng's]]></title>
   <link href="http://voodeng.com/atom.xml" rel="self"/>
   <link href="http://voodeng.com/"/>
-  <updated>2012-11-09T01:55:41+08:00</updated>
+  <updated>2012-11-09T04:01:40+08:00</updated>
   <id>http://voodeng.com/</id>
   <author>
     <name><![CDATA[Voodeng]]></name>
@@ -55,73 +55,14 @@
 
 <p>本来人就不太聪明，搞了一个下午才能把sina那个api给看完，实验玩，很久没这样了，真心要人命哟，尤其是这个js的api，官方文档那真是个简单明啊，有好些部分都没列出来，不过也基本够用了。</p>
 
-<p>附上 <strong><a href="https://docs.google.com/document/d/1Rm7gjFcM45sE3HUA9yxW5Gtj2D7AjweGaGLo6j5K9-c/edit">Google Doc 文档记录</a> </strong></p>
-
 <p><del>先记录下，有时间就把它们补充</del></p>
 
 <hr />
 
 <h2><a name="json">新浪api 以及json数据分析</a></h2>
 
-<h3>官方文档 JSON示例</h3>
-
 <!--more-->
 
-
-<blockquote><pre><code>{
-    "statuses": [
-        {
-            "created_at": "Tue May 31 17:46:55 +0800 2011",
-            "id": 11488058246,
-            "text": "求关注。"，
-            "source": "&lt;a href="http://weibo.com" rel="nofollow"&gt;新浪微博&lt;/a&gt;",
-            "favorited": false,
-            "truncated": false,
-            "in_reply_to_status_id": "",
-            "in_reply_to_user_id": "",
-            "in_reply_to_screen_name": "",
-            "geo": null,
-            "mid": "5612814510546515491",
-            "reposts_count": 8,
-            "comments_count": 9,
-            "annotations": [],
-            "user": {
-                "id": 1404376560,
-                "screen_name": "zaku",
-                "name": "zaku",
-                "province": "11",
-                "city": "5",
-                "location": "北京 朝阳区",
-                "description": "人生五十年，乃如梦如幻；有生斯有死，壮士复何憾。",
-                "url": "http://blog.sina.com.cn/zaku",
-                "profile_image_url": "http://tp1.sinaimg.cn/1404376560/50/0/1",
-                "domain": "zaku",
-                "gender": "m",
-                "followers_count": 1204,
-                "friends_count": 447,
-                "statuses_count": 2908,
-                "favourites_count": 0,
-                "created_at": "Fri Aug 28 00:00:00 +0800 2009",
-                "following": false,
-                "allow_all_act_msg": false,
-                "remark": "",
-                "geo_enabled": true,
-                "verified": false,
-                "allow_all_comment": true,
-                "avatar_large": "http://tp1.sinaimg.cn/1404376560/180/0/1",
-                "verified_reason": "",
-                "follow_me": false,
-                "online_status": 0,
-                "bi_followers_count": 215
-            }
-        },
-        ...
-    ],
-    "previous_cursor": 0,
-    "next_cursor": 11488013766,
-    "total_number": 81655
-}
-</code></pre></blockquote>
 
 <h3><a name="json2">自行获取的节点：</a></h3>
 
@@ -261,19 +202,13 @@
     type: "GET",  
     dataType: "jsonp",  
     data: {  
-        source: "app key",  
+        access_token: "你的access token", 
         uid: "user id", 
         count: 2  
     },  
     success: function(data, textStatus, xhr){  
       var weibo = data.data.statuses;
       var length = weibo.length;
-      var fragment = document.createDocumentFragment();   
-      for (var i=0; i&lt;length; i++){
-      var item = document.createElement('li');
-      item.innerHTML = linkify(weibo[i].text) + weibo[i].retweeted_status.text + '&lt;small&gt;'+weibo[i].created_at+'&lt;/small&gt;';
-      fragment.appendChild(item);}
-      document.body.appendChild(fragment);
       var str= '';
       $.each(weibo,function(i){
           w=weibo[i];
@@ -283,8 +218,7 @@
           str+='&lt;/ol&gt;'
       });
       //$("#content").html(str);
-alert(weibo.length)
-       // alert(data.data.length)         
+alert(weibo.length)        
     }  
 })  
 </code></pre></blockquote>
@@ -296,8 +230,8 @@ alert(weibo.length)
     url: "https://api.weibo.com/2/statuses/user_timeline.json",  
     type: "GET",  
     dataType: "jsonp",  
-    data: {  
-        source: "你的APP KEY",  
+    data: {   
+        access_token: "你的access token",
         uid: "目标用户id", 
         count: 获取微博条数 
     },  
@@ -305,7 +239,7 @@ alert(weibo.length)
         //读取成功后执行函数
         var weibo = data.data.statuses;
         var length = weibo.length;
-        alert(weibo.length)        
+        alert(length);        
     }  
 })  
 </code></pre></blockquote>
@@ -320,6 +254,8 @@ alert(weibo.length)
 <strong>只能使用$.ajax() 并且 dataType: &#8220;jsonp&#8221;</strong> <br/>
 应该是js的跨域访问问题</p>
 
+<p><strong>测试应用access_token有过期限制，时间是一天，需要重新登录到sina获取</strong></p>
+
 <h3>数据存储点：</h3>
 
 <p>var weibo = data.data.statuses  //  这是获取的数据数组</p>
@@ -332,6 +268,7 @@ alert(weibo.length)
 
 <pre><code>.created_at = 微博创建时间
 .id  = 微博的id
+.mid = 要获取url地址就用这个解码一下
 .text = 微博内容
 .source = 微博发布来源，微博左下角的文章出处
 
